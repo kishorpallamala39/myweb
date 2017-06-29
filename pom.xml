@@ -37,15 +37,15 @@
 	</dependencies>
 	
 	<distributionManagement>
-		<repository>
-			<id>nexus</id>
+	       <repository>
+			<id>NEXUS101</id>
 			<name>Releases</name>
-			<url>http://192.168.70.1:32768/repository/maven-releases/</url>
+			<url>http://13.59.98.133:8081/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>nexus</id>
+			<id>NEXUS101</id>
 			<name>Snapshot</name>
-			<url>http://192.168.70.1:32768/repository/maven-snapshots/</url>
+			<url>http://13.59.98.133:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
   	</distributionManagement>
 	<build>
