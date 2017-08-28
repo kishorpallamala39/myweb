@@ -37,14 +37,14 @@
 	
 	<distributionManagement>
 	       <repository>
-			<id>NEXUS</id>
+			<id>SONAR-NEXUS-DEMO</id>
 			<name>Releases</name>
-			<url>http://13.58.30.59:8081/nexus/content/repositories/releases/</url>
+			<url>http://18.221.8.67:8081/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>NEXUS</id>
+			<id>SONAR-NEXUS-DEMO</id>
 			<name>Snapshot</name>
-			<url>http://13.58.30.59:8081/nexus/content/repositories/snapshots/</url>
+			<url>http://18.221.8.67:8081/nexus/content/repositories/snapshots/</url>
 			
 		</snapshotRepository>
   	</distributionManagement>
