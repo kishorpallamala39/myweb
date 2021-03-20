@@ -16,7 +16,7 @@ pipeline{
       steps{
            // tool name: 'Maven3', type: 'maven'
             sh "mvn clean package"
-            sh "mv target/*.war target/myweb.war"
+           // sh "mv target/*.war target/myweb.war"
       }
      } 
     stage("tomcat-deploy"){     
