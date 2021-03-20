@@ -1,4 +1,4 @@
-currentBuild.displayName= "pipelin_test-#"+currentBuild.number
+currentBuild.displayName= "pipelin_test-#"+currentBuild.number+currentBuild.result
 pipeline{
   agent any
   
