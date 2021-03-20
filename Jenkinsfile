@@ -1,4 +1,4 @@
-env.BUILD_DISPLAY_NAME= "pipeline_test-#"+env.BUILD_NUMBER
+currentBuild.displayName= "pipelin_test-#"+currentBuild.number
 pipeline{
   agent any
   
