@@ -1,3 +1,4 @@
+env.BUILD_DISPLAY_NAME= "pipeline_test-#"+env.BUILD_NUMBER
 pipeline{
   agent any
   
