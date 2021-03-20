@@ -20,7 +20,7 @@ pipeline{
       }
      } 
     stage(tomcat-deploy){     
-      steos{
+      steps{
           sshagent(['Tomcat8']) {
             sh """
                   scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.23.51:/opt/tomcat8/webapps/
