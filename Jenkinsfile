@@ -6,8 +6,7 @@ pipeline{
       git 'https://github.com/kishorpallamala39/myweb.git'
       }
     
-    
-    }
+       }
   
   }
  
