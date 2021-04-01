@@ -19,7 +19,7 @@ pipeline{
         }
         stage('docker build'){
             steps{
-              sh "docker build -t pallamala/pallamalaApp:"
+                sh "docker build -t pallamala/pallamalaApp:${DOCKER_TAG} ."
             }
         }
     }
