@@ -22,6 +22,15 @@ pipeline{
                 sh "docker build . -t pallamala/pallamalaapp:${DOCKER_TAG} "
             }
         }
+         stage('docker push'){
+            steps{
+               withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
+                   sh "docker login -u pallamala -p ${dockerHubPwd}"
+            }
+               
+                sh "docker push pallamala/pallamalaapp:${DOCKER_TAG} "
+            }
+        }
     }
 }
 
