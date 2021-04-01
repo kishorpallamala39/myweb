@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment {
        PATH = "/opt/maven3/bin:$PATH"  
-        DOCKER_TAG = "getVersion()"
+        DOCKER_TAG = getVersion()
       
     }
     stages{
