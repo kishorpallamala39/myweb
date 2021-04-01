@@ -31,8 +31,16 @@ pipeline{
                 sh "docker push pallamala/pallamalaapp:${DOCKER_TAG} "
             }
         }
+   stage('docker deploy'){
+            steps{
+              ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, extras: 'DOCKER_TAG="${DOCKER_TAG}"', installation: 'Ansible2', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
+
+            }
     }
+    }
+   
 }
+
 
 def getVersion(){
 def commitHash= sh returnStdout: true, script: 'git rev-parse --short HEAD'
