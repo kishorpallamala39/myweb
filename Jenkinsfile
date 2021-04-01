@@ -4,13 +4,13 @@ pipeline{
       maven 'maven3'
     }
     environment {
+       PATH = "/opt/maven3/bin:$PATH"  
       DOCKER_TAG = getVersion()
     }
     stages{
         stage('SCM'){
             steps{
-                git credentialsId: 'github', 
-                    url: 'https://github.com/kishorpallamala39/dockeransiblejenkins'
+               git 'https://github.com/kishorpallamala39/myweb.git'
             }
         }
         
