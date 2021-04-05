@@ -17,5 +17,12 @@ pipeline {
            
         }
      }
+     
+     stage('docker build'){
+        steps{
+           sh 'docker build -t pallamala:pallamalaapp1:21.3.2.1  .'
+        
+        }
+     }
   }
 }
