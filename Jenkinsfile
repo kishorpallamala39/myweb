@@ -35,8 +35,17 @@ pipeline {
         
         }
      }
+     
+      stage('docker deploy'){
+        steps{
+           ansiblePlaybook credentialsId: 'Dev-server', disableHostKeyChecking: true, extras: 'DOCKER_TAG="${DOCKER_TAG}"', installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
+  
+        
+        }
+     }
   }
 }
+
 
 
 def getVersion(){
