@@ -24,5 +24,15 @@ pipeline {
         
         }
      }
+     
+     stage('docker push'){
+        steps{
+          withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhub')]) {
+             sh "docker login -u pallamala -p ${dockerhub}
+        } 
+         
+        
+        }
+     }
   }
 }
