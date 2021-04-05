@@ -20,17 +20,17 @@ pipeline {
      
      stage('docker build'){
         steps{
-           sh "docker build  -t pallamala/pallamalaapp:21.2.3 ."
+           sh "docker build  -t pallamala/pallamalaapp1:21.2.3 ."
         
         }
      }
      
      stage('docker push'){
         steps{
-          withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhub')]) {
-             sh "docker login -u pallamala -p ${dockerhub}
+         withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dokcerHubPwd')]) {
+             sh "docker login -u pallamala -p ${dokcerHubPwd}
         } 
-         
+           sh "docker push pallamala/pallamalaapp1:21.2.3"  
         
         }
      }
