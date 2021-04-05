@@ -20,7 +20,7 @@ pipeline {
      
      stage('docker build'){
         steps{
-           sh "docker build . -t pallamala/pallamalaapp:21.2.3 "
+           sh "docker build . -t pallamala/pallamalaapp:21.2.3"
         
         }
      }
