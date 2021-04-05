@@ -28,7 +28,7 @@ pipeline {
      stage('docker push'){
         steps{
          withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dokcerHubPwd')]) {
-             sh "docker login -u pallamala -p ${dokcerHubPwd}
+             sh "docker login -u pallamala -p ${dokcerHubPwd}"
         } 
            sh "docker push pallamala/pallamalaapp1:21.2.3"  
         
