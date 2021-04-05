@@ -13,14 +13,14 @@ pipeline {
     }
      stage('maven build'){
         steps{
-          sh 'mvn clean package'
+          sh "mvn clean package"
            
         }
      }
      
      stage('docker build'){
         steps{
-           sh 'docker build . -t pallamala:pallamalaapp1:21.3.2.1 '
+           sh "docker build . -t pallamala:pallamalaapp1:21.3.2.1"
         
         }
      }
