@@ -2,6 +2,7 @@ pipeline {
    agent any
   environment {
    PATH = "/opt/maven3/bin:$PATH"
+   DOCKER_TAG = "getVersion()"  
 }
 
   stages{
@@ -20,7 +21,7 @@ pipeline {
      
      stage('docker build'){
         steps{
-           sh "docker build  -t pallamala/pallamalaapp1:21.2.3 ."
+           sh "docker build  -t pallamala/pallamalaapp1:${DOCKER_TAG} ."
         
         }
      }
@@ -30,9 +31,15 @@ pipeline {
          withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dokcerHubPwd')]) {
              sh "docker login -u pallamala -p ${dokcerHubPwd}"
         } 
-           sh "docker push pallamala/pallamalaapp1:21.2.3"  
+           sh "docker push pallamala/pallamalaapp1:${DOCKER_TAG}"  
         
         }
      }
   }
+}
+
+
+def getVersion(){
+  def commitHash= sh returnStdout: true, script: 'git rev-parse --short HEAD'
+   return commitHash
 }
